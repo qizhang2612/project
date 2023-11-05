@@ -1,0 +1,71 @@
+# Custom key cached in Redis.
+# Each pair start with a prefix, Redis will store prefix-<table>[<key>] as a specific key.
+# col defines corresponding value to be retrieved.
+
+sub:
+  type: list
+  table: sub
+  key: topic_name
+  col: subscriber
+topic:
+  type: hash
+  table: pub
+  key: topic_name
+  col:
+    - type
+    - location
+    - description
+    - ip
+    - group_addr
+channels:
+  type: list
+  table: pub
+  key: null
+  col: topic_name
+host:
+  type: hash
+  table: host
+  key: host_name
+  col:
+    - type
+    - location
+    - description
+    - ip
+hosts:
+  type: list
+  table: host
+  key: null
+  col: host_name
+path:
+  type: hash
+  table: dn
+  key: topicXsubscriber
+  col:
+    - path
+    - delay
+    - bandwidth
+    - priority
+paths:
+  type: list
+  table: dn
+  key: null
+  col: topicXsubscriber
+toponodes:
+  type: list
+  table: toponodes
+  key: null
+  col : name
+topoedge:
+  type: hash
+  table: topoedges
+  key: srcXdst
+  col:
+    - src_port
+    - dst_port
+    - bandwidth
+    - delay
+topoedges:
+  type: list
+  table: topoedges
+  key: null
+  col: srcXdst

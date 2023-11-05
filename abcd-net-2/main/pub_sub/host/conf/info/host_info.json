@@ -1,0 +1,8 @@
+{
+  "name": "w-1-1",
+  "type": "w-1",
+  "location": "B",
+  "description": "This is a s of type s-1 in area B.",
+  "bandwidth": 3,
+  "delay": 10
+}

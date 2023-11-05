@@ -1,0 +1,27 @@
+# Custom key cached in Redis.
+# Each pair start with a prefix, Redis will store prefix-<table>[<key>] as a specific key.
+# col defines corresponding value to be retrieved.
+
+# channels_pub, channels_sub
+channels:
+  type: list
+  table: address
+  key: op
+  col: topic_name
+channel:
+  type: hash
+  table: address
+  key: topic_name
+  col:
+    - address
+    - location
+history:
+  type: list
+  table: history
+  key: channel
+  col: msg
+senders:
+  type: list
+  table: senders
+  key: null
+  col: name
